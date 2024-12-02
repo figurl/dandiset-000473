@@ -1,5 +1,4 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches: ['main']
@@ -30,11 +29,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'yarn'
       - name: Install dependencies
-        run: cd gui && npm ci
+        run: cd gui && yarn install
       - name: Build
-        run: cd gui && npm run build
+        run: cd gui && yarn build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
