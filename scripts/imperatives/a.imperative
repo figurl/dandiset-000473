@@ -12,6 +12,8 @@ Print the job id and status
 
 If the status of the job is "completed" then print the url of the output named "output".
 
+Similar for rastermap job: Use /units as the units path, print the job id and status, and if the status is "completed" then print the url of the output named "output".
+
 Print an empty line.
 =======================
 
@@ -20,8 +22,14 @@ Assemble a JSON object with the following structure
 [
     {
         "session_path": "[session path]",
-        "nwb_url": "[nwb url]",
+        "nwb_url": "[nwb_url]",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=[nwb_url]&dandisetId=000473
         "multiscale_spike_density": {
+            "job_id": "[job id]",
+            "status": "[status]",
+            "output_url": "[output url]"  # empty string if status is not "completed"
+        },
+        "rastermap": {
             "job_id": "[job id]",
             "status": "[status]",
             "output_url": "[output url]"  # empty string if status is not "completed"

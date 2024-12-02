@@ -2,226 +2,376 @@
     {
         "session_path": "sub-128514/sub-128514_ses-128514-20191215-probe0_behavior+ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/309f7aaf-e821-409c-afa5-d2db0b109b06/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/309f7aaf-e821-409c-afa5-d2db0b109b06/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "DaSWYZ2kUtYKlNc1Ty58",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/DaSWYZ2kUtYKlNc1Ty58/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "5F57uglzHxqxztZAkcFg",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/5F57uglzHxqxztZAkcFg/output/output.json"
         }
     },
     {
         "session_path": "sub-128515/sub-128515_ses-128515-20191216-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/238eca45-439f-4fd5-a95b-7ba966d81873/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/238eca45-439f-4fd5-a95b-7ba966d81873/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "NrGlbsiX8qUsaayk1iyW",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/NrGlbsiX8qUsaayk1iyW/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "bkxYcSncAX7Eac8XZ9sY",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/bkxYcSncAX7Eac8XZ9sY/output/output.json"
         }
     },
     {
         "session_path": "sub-128516/sub-128516_ses-128516-20191215-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/64ed0572-358d-48fc-a152-a0134e075e8f/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/64ed0572-358d-48fc-a152-a0134e075e8f/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "JKjGIFBCzMjalZhAKzih",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/JKjGIFBCzMjalZhAKzih/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "ZzpBUyAZXptYZ4z8cFiL",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/ZzpBUyAZXptYZ4z8cFiL/output/output.json"
         }
     },
     {
         "session_path": "sub-147463/sub-147463_ses-147463-20191113-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/03310c88-fd96-4847-b3f0-af24f82b4ae8/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/03310c88-fd96-4847-b3f0-af24f82b4ae8/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "zf4J5NnSzHwrS8ed3yXv",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/zf4J5NnSzHwrS8ed3yXv/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "83yv8TMCkeDR9Uo4pJOP",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/83yv8TMCkeDR9Uo4pJOP/output/output.json"
         }
     },
     {
         "session_path": "sub-147465/sub-147465_ses-147465-20191113-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/55f6879e-117c-4c49-95d0-7a6de8332fed/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/55f6879e-117c-4c49-95d0-7a6de8332fed/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "5rzfmPxxESeCB5EF4jPq",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/5rzfmPxxESeCB5EF4jPq/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "ZwWvudvtFLOTzzYlLhFF",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/ZwWvudvtFLOTzzYlLhFF/output/output.json"
         }
     },
     {
         "session_path": "sub-152414/sub-152414_ses-152414-20191023-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/8cb2c313-c30b-4b06-98d9-90d0c0af5e6d/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/8cb2c313-c30b-4b06-98d9-90d0c0af5e6d/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "DkOidWyrOfUHdW2vrfGl",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/DkOidWyrOfUHdW2vrfGl/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "VgRMjPK9Q6PUeE8UtfhU",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/VgRMjPK9Q6PUeE8UtfhU/output/output.json"
         }
     },
     {
         "session_path": "sub-152417/sub-152417_ses-152417-20191023-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/504b13cc-f828-406b-a556-ee1bb3a1323a/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/504b13cc-f828-406b-a556-ee1bb3a1323a/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "jXpFYRMRHJilt9sJmpxR",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/jXpFYRMRHJilt9sJmpxR/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "eZY6DrWAzu72UUoRF6nC",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/eZY6DrWAzu72UUoRF6nC/output/output.json"
         }
     },
     {
         "session_path": "sub-152419/sub-152419_ses-152419-20191106-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/3ccb8c29-1144-4af9-9ae4-472db04f4236/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/3ccb8c29-1144-4af9-9ae4-472db04f4236/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "Jx46Iy0kejI0rMbK4CGt",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/Jx46Iy0kejI0rMbK4CGt/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "OuWk3XKRaGlFZxQm430Z",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/OuWk3XKRaGlFZxQm430Z/output/output.json"
         }
     },
     {
         "session_path": "sub-156130/sub-156130_ses-156130-20191112-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/8316caa3-d9da-421a-974a-f6c60818e3ff/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/8316caa3-d9da-421a-974a-f6c60818e3ff/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "94ONP6hMCJKsZK1OInXZ",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/94ONP6hMCJKsZK1OInXZ/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "XR1tUhwsJzf6a0KqQY0U",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/XR1tUhwsJzf6a0KqQY0U/output/output.json"
         }
     },
     {
         "session_path": "sub-156131/sub-156131_ses-156131-20191112-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/6b424b64-764a-4677-a828-49094420e930/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/6b424b64-764a-4677-a828-49094420e930/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "1tutncDcu5CYR1EOXiTI",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/1tutncDcu5CYR1EOXiTI/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "c2ke0u2C7bZuNeU1lXua",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/c2ke0u2C7bZuNeU1lXua/output/output.json"
         }
     },
     {
         "session_path": "sub-216300/sub-216300_ses-216300-20200518-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/1465c75e-34ee-4f88-954d-656c2aba0550/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/1465c75e-34ee-4f88-954d-656c2aba0550/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "2HNwndtN8ke28dHYEWjk",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/2HNwndtN8ke28dHYEWjk/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "rQ3bwjpZRxfdpxOds0BJ",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/rQ3bwjpZRxfdpxOds0BJ/output/output.json"
         }
     },
     {
         "session_path": "sub-216301/sub-216301_ses-216301-20200521-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/74a54d2b-bdb5-49cf-b323-7729e5f8bc7e/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/74a54d2b-bdb5-49cf-b323-7729e5f8bc7e/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "BBdGB9I54jg2ue9ZcXm7",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/BBdGB9I54jg2ue9ZcXm7/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "cP4Fj6Euk7YTP25oFPXB",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/cP4Fj6Euk7YTP25oFPXB/output/output.json"
         }
     },
     {
         "session_path": "sub-225757/sub-225757_ses-225757-20200519-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/36dc4d76-5fdc-488f-ad25-9bac294763de/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/36dc4d76-5fdc-488f-ad25-9bac294763de/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "5RR3AIJAs6xTBzjLkuo2",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/5RR3AIJAs6xTBzjLkuo2/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "CZc67sYJDMTf3oqwNWtD",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/CZc67sYJDMTf3oqwNWtD/output/output.json"
         }
     },
     {
         "session_path": "sub-225758/sub-225758_ses-225758-20200519-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/4eb63c89-a225-4c79-b894-4dc590fa7f6f/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/4eb63c89-a225-4c79-b894-4dc590fa7f6f/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "68HoLBuriWUZAw9CtYNS",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/68HoLBuriWUZAw9CtYNS/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "FdMtmGGJpT8FneOpRI27",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/FdMtmGGJpT8FneOpRI27/output/output.json"
         }
     },
     {
         "session_path": "sub-225759/sub-225759_ses-225759-20200521-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/1d3f712f-8e02-4d1f-b68b-268d6b314113/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/1d3f712f-8e02-4d1f-b68b-268d6b314113/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "xfZlFQHUFBSLZosV1tVG",
             "status": "completed",
             "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/xfZlFQHUFBSLZosV1tVG/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "MV9B4ZCOxtLE0fdapkKO",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/MV9B4ZCOxtLE0fdapkKO/output/output.json"
         }
     },
     {
         "session_path": "sub-258412/sub-258412_ses-258412-20200915-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/42ae0663-7f2e-49b0-b5a3-bf39a89acfe5/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/42ae0663-7f2e-49b0-b5a3-bf39a89acfe5/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "tjPp8ab05XBiAgeasuPn",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/tjPp8ab05XBiAgeasuPn/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "crgPzb8CII2FjrpYy7um",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/crgPzb8CII2FjrpYy7um/output/output.json"
         }
     },
     {
         "session_path": "sub-258414/sub-258414_ses-258414-20200915-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/ebdfd725-7d17-467e-bfa7-a36735bd90d0/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/ebdfd725-7d17-467e-bfa7-a36735bd90d0/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "vqRdS7mirJ1TULiEtwza",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/vqRdS7mirJ1TULiEtwza/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "S0gC9gfqKxVCn51pEwLK",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/S0gC9gfqKxVCn51pEwLK/output/output.json"
         }
     },
     {
         "session_path": "sub-258416/sub-258416_ses-258416-20200921-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/35e5f6ef-0a26-4391-9a53-846aeb27144a/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/35e5f6ef-0a26-4391-9a53-846aeb27144a/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "RDclKc1t3NzINw8vd30Z",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/RDclKc1t3NzINw8vd30Z/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "Vcz3oQOaGOIxcG8RW0q1",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/Vcz3oQOaGOIxcG8RW0q1/output/output.json"
         }
     },
     {
         "session_path": "sub-258419/sub-258419_ses-258419-20200921-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/ee8911b7-766f-4819-bbce-2c6834a8df5e/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/ee8911b7-766f-4819-bbce-2c6834a8df5e/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "F4uvVVimBl1UOkpEQfUv",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/F4uvVVimBl1UOkpEQfUv/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "iyjO3TLOEOg4qaHETzeW",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/iyjO3TLOEOg4qaHETzeW/output/output.json"
         }
     },
     {
         "session_path": "sub-259112/sub-259112_ses-259112-20200914-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/9b3078b7-eb42-4915-9061-4fcf0d2d75ff/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/9b3078b7-eb42-4915-9061-4fcf0d2d75ff/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "QBZmiAHoWFjtvXu5B3UH",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/QBZmiAHoWFjtvXu5B3UH/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "JzlVUWDocNBAEwj9rpHi",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/JzlVUWDocNBAEwj9rpHi/output/output.json"
         }
     },
     {
         "session_path": "sub-268947/sub-268947_ses-268947-20200922-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/75cb978b-4859-4033-8879-455c34b6c1d1/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/75cb978b-4859-4033-8879-455c34b6c1d1/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "fZ6CvJtpTjNYuoc2ymwu",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/fZ6CvJtpTjNYuoc2ymwu/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "sr76cCj1KZoc5KXO6Gg5",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/sr76cCj1KZoc5KXO6Gg5/output/output.json"
         }
     },
     {
         "session_path": "sub-268951/sub-268951_ses-268951-20200922-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/4bab70cf-de0b-450c-831c-7198df6b7dcf/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/4bab70cf-de0b-450c-831c-7198df6b7dcf/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "fdXkadNwHRkkr3UIr9SY",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/fdXkadNwHRkkr3UIr9SY/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "5671sHzqLntptqquBXje",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/5671sHzqLntptqquBXje/output/output.json"
         }
     },
     {
         "session_path": "sub-273853/sub-273853_ses-273853-20200925-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/494edb8a-13a0-4eba-a4da-3fa84a08bce8/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/494edb8a-13a0-4eba-a4da-3fa84a08bce8/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "0uArQZdApFoR1pUyGCRj",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/0uArQZdApFoR1pUyGCRj/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "0HwUIaiPD5GuGIELXk0d",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/0HwUIaiPD5GuGIELXk0d/output/output.json"
         }
     },
     {
         "session_path": "sub-273855/sub-273855_ses-273855-20200928-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/9e9befe8-3032-4322-8dc5-9b8608cc6974/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/9e9befe8-3032-4322-8dc5-9b8608cc6974/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "rxE3zJuohhcGLoi6grJA",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/rxE3zJuohhcGLoi6grJA/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "xugNZY6ucfjmOQAe7Keq",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/xugNZY6ucfjmOQAe7Keq/output/output.json"
         }
     },
     {
         "session_path": "sub-273858/sub-273858_ses-273858-20200925-probe0_ecephys+ogen.nwb",
         "nwb_url": "https://api.dandiarchive.org/api/assets/82203b2a-02b2-4b7c-bd02-2423d534916a/download/",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/82203b2a-02b2-4b7c-bd02-2423d534916a/download/&dandisetId=000473",
         "multiscale_spike_density": {
             "job_id": "59wGnu8PmHXVeeH3IADm",
-            "status": "pending",
-            "output_url": ""
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_neurosift/multiscale_spike_density/59wGnu8PmHXVeeH3IADm/output/output.lindi.tar"
+        },
+        "rastermap": {
+            "job_id": "qYyKWzxwBJDmzbsrU1km",
+            "status": "completed",
+            "output_url": "https://tempory.net/f/dendro/f/neurosift/hello_rastermap/rastermap/qYyKWzxwBJDmzbsrU1km/output/output.json"
         }
     }
 ]

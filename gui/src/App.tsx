@@ -32,139 +32,217 @@ function App() {
   const { width, height } = useWindowDimensions();
   const mainAreaWidth = Math.min(width - 30, 1200);
   const offsetLeft = (width - mainAreaWidth) / 2;
-  const divHandler = useMemo(() => getDivHandler(mainAreaWidth), [mainAreaWidth]);
-  const onSpecialLinkClick = useMemo(() => (link: string) => {
-    const r = parseSpecialLink(link);
-    if (!r) return;
-  }, []);
+  const [useRastermap, setUseRastermap] = useState(true);
+  const divHandler = useMemo(() => (
+    (a: { className: string | undefined; props: any; children: any }) => {
+      const { className, props, children } = a;
+      if (className === "session") {
+        const session = sessions.find(
+          (s) => s.session_path === props.session_path
+        );
+        if (!session) {
+          return <div>SESSION NOT FOUND {props.session_path}</div>;
+        }
+        if (session.multiscale_spike_density.status === "completed") {
+          return <SessionView session={session} width={mainAreaWidth} useRastermap={useRastermap} />;
+        } else {
+          return <div>Job status: {session.multiscale_spike_density.status}</div>;
+        }
+      } else if (className === "use-rastermap-selector") {
+        return (
+          <UseRastermapSelector
+            useRastermap={useRastermap}
+            setUseRastermap={setUseRastermap}
+          />
+        )
+      } else {
+        return (
+          <div className={className} {...props}>
+            {children}
+          </div>
+        );
+      }
+    }
+  ), [useRastermap, mainAreaWidth]);
+  const onSpecialLinkClick = useMemo(
+    () => (link: string) => {
+      const r = parseSpecialLink(link);
+      if (!r) return;
+    },
+    []
+  );
   return (
     <div
       style={{
         position: "absolute",
-        left: offsetLeft,
-        width: mainAreaWidth,
+        left: 0,
+        width,
         top: 0,
         height: height,
-        overflow: "auto",
+        overflowY: "auto",
       }}
     >
-      <Markdown
-        source={mainMd}
-        onSpecialLinkClick={onSpecialLinkClick}
-        linkTarget="_self"
-        divHandler={divHandler}
-      />
+      <div
+        style={{
+          position: "absolute",
+          left: offsetLeft,
+          width: mainAreaWidth,
+          top: 0
+        }}
+      >
+        <Markdown
+          source={mainMd}
+          onSpecialLinkClick={onSpecialLinkClick}
+          linkTarget="_self"
+          divHandler={divHandler}
+        />
+      </div>
     </div>
   );
 }
 
-const getDivHandler =
-  (width: number) =>
-  (a: { className: string | undefined; props: any; children: any }) => {
-    const { className, props, children } = a;
-    if (className === "session") {
-      const a = sessions.find((s) => s.session_path === props.session_path);
-      if (!a) {
-        return <div>SESSION NOT FOUND {props.session_path}</div>;
-      }
-      const hasBehavior = a.session_path.includes("behavior");
-      if (a.multiscale_spike_density.status === "completed") {
-        const W = width - 50;
-        const H_spike_density = 400;
-        const H_face_motion = 150;
-        const H_blink = 150;
-        const H_eye_area = 150;
-        return (
-          <SetupTimeseriesSelection>
-            <ProvideNwbFile nwbUrl={a.nwb_url} dandisetId="000473">
-              <div>Spike density</div>
-              <IfHasBeenVisible width={W} height={H_spike_density}>
-                <div
-                  style={{
-                    position: "relative",
-                    width: W,
-                    height: H_spike_density,
-                  }}
-                >
-                  <SpikeDensityPlotWidget
-                    width={W}
-                    height={H_spike_density}
-                    multiscaleSpikeDensityOutputUrl={
-                      a.multiscale_spike_density.output_url
-                    }
-                  />
-                </div>
-              </IfHasBeenVisible>
-
-              {hasBehavior && <>
-                <div>Face motion</div>
-                <IfHasBeenVisible width={W} height={H_face_motion}>
-                  <div
-                    style={{
-                      position: "relative",
-                      width: W,
-                      height: H_face_motion,
-                    }}
-                  >
-                    <NwbTimeseriesView
-                      width={W}
-                      height={H_face_motion}
-                      objectPath="/processing/behavior/BehavioralTimeSeries/face_motion_data"
-                      colorChannels={true}
-                    />
-                  </div>
-                </IfHasBeenVisible>
-
-                <div>Blink</div>
-                <IfHasBeenVisible width={W} height={H_blink}>
-                  <div
-                    style={{
-                      position: "relative",
-                      width: W,
-                      height: H_blink,
-                    }}
-                  >
-                    <NwbTimeseriesView
-                      width={W}
-                      height={H_face_motion}
-                      objectPath="/processing/behavior/Blink/blink"
-                      colorChannels={true}
-                    />
-                  </div>
-                </IfHasBeenVisible>
-
-                <div>Eye area</div>
-                <IfHasBeenVisible width={W} height={H_eye_area}>
-                  <div
-                    style={{
-                      position: "relative",
-                      width: W,
-                      height: H_eye_area,
-                    }}
-                  >
-                    <NwbTimeseriesView
-                      width={W}
-                      height={H_face_motion}
-                      objectPath="/processing/behavior/PupilTracking/eye_area"
-                      colorChannels={true}
-                    />
-                  </div>
-                </IfHasBeenVisible>
-              </>}
-            </ProvideNwbFile>
-          </SetupTimeseriesSelection>
-        );
-      } else {
-        return <div>Job status: {a.multiscale_spike_density.status}</div>;
-      }
-    } else {
-      return (
-        <div className={className} {...props}>
-          {children}
-        </div>
-      );
-    }
+type SessionViewProps = {
+  session: {
+    session_path: string;
+    nwb_url: string;
+    multiscale_spike_density: { status: string; output_url: string };
+    rastermap: { status: string; output_url: string };
   };
+  width: number;
+  useRastermap: boolean;
+};
+
+const SessionView: FunctionComponent<SessionViewProps> = ({
+  session,
+  width,
+  useRastermap
+}) => {
+  const W = width - 50;
+  const H_spike_density = 400;
+  const H_face_motion = 150;
+  const H_blink = 150;
+  const H_eye_area = 150;
+
+  const hasBehavior = session.session_path.includes("behavior");
+
+  const rastermapOutput = useRastermapOutput(useRastermap ? session.rastermap.output_url : undefined);
+
+  if (useRastermap && (!session.rastermap.output_url)) {
+    return <div>Rastermap job not complete: {session.rastermap.status}</div>;
+  }
+  if (useRastermap && (!rastermapOutput)) {
+    return <div>Loading rastermap output...</div>;
+  }
+  return (
+    <SetupTimeseriesSelection>
+      <ProvideNwbFile nwbUrl={session.nwb_url} dandisetId="000473">
+        <div>Spike density</div>
+        <IfHasBeenVisible width={W} height={H_spike_density}>
+          <div
+            style={{
+              position: "relative",
+              width: W,
+              height: H_spike_density,
+            }}
+          >
+            <SpikeDensityPlotWidget
+              width={W}
+              height={H_spike_density}
+              multiscaleSpikeDensityOutputUrl={
+                session.multiscale_spike_density.output_url
+              }
+              rastermapOutput={useRastermap ? rastermapOutput : undefined}
+            />
+          </div>
+        </IfHasBeenVisible>
+
+        {hasBehavior && (
+          <>
+            <div>Face motion</div>
+            <IfHasBeenVisible width={W} height={H_face_motion}>
+              <div
+                style={{
+                  position: "relative",
+                  width: W,
+                  height: H_face_motion,
+                }}
+              >
+                <NwbTimeseriesView
+                  width={W}
+                  height={H_face_motion}
+                  objectPath="/processing/behavior/BehavioralTimeSeries/face_motion_data"
+                  colorChannels={true}
+                />
+              </div>
+            </IfHasBeenVisible>
+
+            <div>Blink</div>
+            <IfHasBeenVisible width={W} height={H_blink}>
+              <div
+                style={{
+                  position: "relative",
+                  width: W,
+                  height: H_blink,
+                }}
+              >
+                <NwbTimeseriesView
+                  width={W}
+                  height={H_face_motion}
+                  objectPath="/processing/behavior/Blink/blink"
+                  colorChannels={true}
+                />
+              </div>
+            </IfHasBeenVisible>
+
+            <div>Eye area</div>
+            <IfHasBeenVisible width={W} height={H_eye_area}>
+              <div
+                style={{
+                  position: "relative",
+                  width: W,
+                  height: H_eye_area,
+                }}
+              >
+                <NwbTimeseriesView
+                  width={W}
+                  height={H_face_motion}
+                  objectPath="/processing/behavior/PupilTracking/eye_area"
+                  colorChannels={true}
+                />
+              </div>
+            </IfHasBeenVisible>
+          </>
+        )}
+      </ProvideNwbFile>
+    </SetupTimeseriesSelection>
+  );
+};
+
+const useRastermapOutput = (rastermapUrl: string | undefined) => {
+  const obj = useJsonObjectFromUrl(rastermapUrl);
+  return obj;
+};
+
+const useJsonObjectFromUrl = (url: string | undefined) => {
+  const [obj, setObj] = useState<any | null>(null);
+  useEffect(() => {
+    let canceled = false;
+    if (!url) {
+      setObj(null);
+      return;
+    }
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((val) => {
+        if (canceled) return;
+        setObj(val);
+      });
+    return () => {
+      canceled = true;
+    }
+  }, [url]);
+  return obj;
+};
 
 const parseSpecialLink = (link: string) => {
   if (link === "?/p=dandi") {
@@ -210,7 +288,8 @@ const useNwbFileFromUrl = (nwbUrl: string, dandisetId: string) => {
   return nwbFile;
 };
 
-const nwbFileFromUrlCache: { [key: string]: RemoteH5File | RemoteH5FileLindi } = {};
+const nwbFileFromUrlCache: { [key: string]: RemoteH5File | RemoteH5FileLindi } =
+  {};
 
 const getNwbFileFromUrl = async (nwbUrl: string, dandisetId: string) => {
   if (nwbFileFromUrlCache[nwbUrl]) {
@@ -225,6 +304,27 @@ const getNwbFileFromUrl = async (nwbUrl: string, dandisetId: string) => {
   }
   nwbFileFromUrlCache[nwbUrl] = ret;
   return ret;
+};
+
+type UseRastermapSelectorProps = {
+  useRastermap: boolean;
+  setUseRastermap: (val: boolean) => void;
+};
+
+const UseRastermapSelector: FunctionComponent<UseRastermapSelectorProps> = ({
+  useRastermap,
+  setUseRastermap
+}) => {
+  return (
+    <div>
+      <input
+        type="checkbox"
+        checked={useRastermap}
+        onChange={(e) => setUseRastermap(e.target.checked)}
+      />&nbsp;
+      Use rastermap
+    </div>
+  );
 };
 
 export default App;

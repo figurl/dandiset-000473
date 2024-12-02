@@ -112,7 +112,7 @@ def upload_file(url: str, filename: str):
     _upload_file_to_s3(s3, bucket, object_key, filename)
 
 
-def _fetch_nwb_files_for_dandiset(dandiset_id, dandiset_version, *, limit=Union[int, None]):
+def _fetch_nwb_files_for_dandiset(dandiset_id, dandiset_version, *, limit: Union[int, None] = None):
     parsed_url = da.parse_dandi_url(
         f"https://dandiarchive.org/dandiset/{dandiset_id}/{dandiset_version}"
     )
@@ -155,8 +155,9 @@ def _fetch_nwb_files_for_dandiset(dandiset_id, dandiset_version, *, limit=Union[
                 download_url=download_url,
             )
             nwb_files.append(x)
-            if limit is not None and len(nwb_files) >= limit:
-                break
+            if limit is not None:
+                if len(nwb_files) >= limit:
+                    break
     return nwb_files
 
 

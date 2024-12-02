@@ -14,6 +14,8 @@ Print the job id and status
 
 If the status of the job is "completed" then print the url of the output named "output".
 
+Similar for rastermap job: Use /units as the units path, print the job id and status, and if the status is "completed" then print the url of the output named "output".
+
 Print an empty line.
 =======================
 
@@ -22,8 +24,14 @@ Assemble a JSON object with the following structure
 [
     {
         "session_path": "[session path]",
-        "nwb_url": "[nwb url]",
+        "nwb_url": "[nwb_url]",
+        "neurosift_url": "https://neurosift.app/?p=/nwb&url=[nwb_url]&dandisetId=000473
         "multiscale_spike_density": {
+            "job_id": "[job id]",
+            "status": "[status]",
+            "output_url": "[output url]"  # empty string if status is not "completed"
+        },
+        "rastermap": {
             "job_id": "[job id]",
             "status": "[status]",
             "output_url": "[output url]"  # empty string if status is not "completed"
@@ -39,64 +47,83 @@ Then copy this file to ../../gui/src/sessions.json
 import json
 import shutil
 import load_dandi_tool
-from submit_jobs_tool import submit_multiscale_spike_density_job
+import submit_jobs_tool
 
-# Load the dandiset by ID
+# Get the dandiset by ID
 dandiset = load_dandi_tool.get_dandiset_by_id('000473')
 
-# Get all NWB files in the dandiset
+# Get all NWB files (assets/sessions) in the dandiset
 nwb_files = dandiset.get_nwb_files(limit=None)
 
-# Initialize a list to hold the session data for JSON output
-session_data = []
+# List to store session data
+sessions_data = []
 
-# Iterate over NWB files and process each
+# Loop through each nwb file (session)
 for nwb_file in nwb_files:
-    session_path = nwb_file.file_path
-    nwb_url = nwb_file.download_url
-    
-    # Print the session path
-    print(f"Session Path: {session_path}")
+    # Print the asset path (session path)
+    print(f"Session path: {nwb_file.file_path}")
 
     # Submit a multiscale_spike_density job
-    job = submit_multiscale_spike_density_job(
+    multiscale_job = submit_jobs_tool.submit_multiscale_spike_density_job(
         dandiset_id=dandiset.dandiset_id,
-        nwb_url=nwb_url,
+        nwb_url=nwb_file.download_url,
         units_path='/units'
     )
-    
-    # Retrieve job ID and status
-    job_id = job.jobId
-    status = job.status
-    print(f"Job ID: {job_id}")
-    print(f"Status: {status}")
-    
-    output_url = ""
-    if status == "completed":
-        # Find the output named "output" and get its URL
-        for output in job.outputFileResults:
+
+    # Print job id and status for multiscale_spike_density
+    print(f"Multiscale Spike Density Job ID: {multiscale_job.jobId}, Status: {multiscale_job.status}")
+
+    # Get output URL if job is completed
+    multiscale_output_url = ""
+    if multiscale_job.status == "completed":
+        for output in multiscale_job.outputFileResults:
             if output.name == "output":
-                output_url = output.url
-                print(f"Output URL: {output_url}")
-                break
-    
+                multiscale_output_url = output.url
+                print(f"Multiscale Spike Density Output URL: {multiscale_output_url}")
+
+    # Submit a rastermap job
+    rastermap_job = submit_jobs_tool.submit_rastermap_job(
+        dandiset_id=dandiset.dandiset_id,
+        nwb_url=nwb_file.download_url,
+        units_path='/units'
+    )
+
+    # Print job id and status for rastermap
+    print(f"Rastermap Job ID: {rastermap_job.jobId}, Status: {rastermap_job.status}")
+
+    # Get output URL if job is completed
+    rastermap_output_url = ""
+    if rastermap_job.status == "completed":
+        for output in rastermap_job.outputFileResults:
+            if output.name == "output":
+                rastermap_output_url = output.url
+                print(f"Rastermap Output URL: {rastermap_output_url}")
+
     # Print an empty line
-    print()
-    
-    # Append the session data to the list
-    session_data.append({
-        "session_path": session_path,
-        "nwb_url": nwb_url,
+    print("")
+
+    # Append session data to the list
+    session_data = {
+        "session_path": nwb_file.file_path,
+        "nwb_url": nwb_file.download_url,
+        "neurosift_url": f"https://neurosift.app/?p=/nwb&url={nwb_file.download_url}&dandisetId=000473",
         "multiscale_spike_density": {
-            "job_id": job_id,
-            "status": status,
-            "output_url": output_url
+            "job_id": multiscale_job.jobId,
+            "status": multiscale_job.status,
+            "output_url": multiscale_output_url
+        },
+        "rastermap": {
+            "job_id": rastermap_job.jobId,
+            "status": rastermap_job.status,
+            "output_url": rastermap_output_url
         }
-    })
+    }
+
+    sessions_data.append(session_data)
 
 # Write the JSON object to a file called "sessions.json"
 with open("sessions.json", "w") as f:
-    json.dump(session_data, f, indent=4)
+    json.dump(sessions_data, f, indent=4)
 
-# Copy the JSON file to the desired location
-shutil.copy("sessions.json", "../../gui/src/sessions.json")
+# Copy the sessions.json file to ../../gui/src/sessions.json
+shutil.copyfile("sessions.json", "../../gui/src/sessions.json")
