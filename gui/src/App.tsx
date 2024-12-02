@@ -23,6 +23,7 @@ import {
 import IfHasBeenVisible from "./neurosift-lib/viewPlugins/PSTH/IfHasBeenVisible";
 import NwbTimeseriesView from "./neurosift-lib/viewPlugins/TimeSeries/TimeseriesItemView/NwbTimeseriesView";
 import SpikeDensityPlotWidget from "./neurosift-lib/viewPlugins/Units/SpikeDensityPlot/SpikeDensityPlotWidget";
+import DynamicTableView from "./neurosift-lib/viewPlugins/DynamicTable/DynamicTableView";
 
 nunjucks.configure({ autoescape: false });
 
@@ -33,6 +34,7 @@ function App() {
   const mainAreaWidth = Math.min(width - 30, 1200);
   const offsetLeft = (width - mainAreaWidth) / 2;
   const [useRastermap, setUseRastermap] = useState(true);
+  const [showUnitsTables, setShowUnitsTables] = useState(true);
   const divHandler = useMemo(() => (
     (a: { className: string | undefined; props: any; children: any }) => {
       const { className, props, children } = a;
@@ -44,7 +46,7 @@ function App() {
           return <div>SESSION NOT FOUND {props.session_path}</div>;
         }
         if (session.multiscale_spike_density.status === "completed") {
-          return <SessionView session={session} width={mainAreaWidth} useRastermap={useRastermap} />;
+          return <SessionView session={session} width={mainAreaWidth} useRastermap={useRastermap} showUnitsTables={showUnitsTables} />;
         } else {
           return <div>Job status: {session.multiscale_spike_density.status}</div>;
         }
@@ -55,7 +57,15 @@ function App() {
             setUseRastermap={setUseRastermap}
           />
         )
-      } else {
+      } else if (className === "show-units-tables-selector") {
+        return (
+          <ShowUnitsTablesSelector
+            showUnitsTables={showUnitsTables}
+            setShowUnitsTables={setShowUnitsTables}
+          />
+        );
+      }
+      else {
         return (
           <div className={className} {...props}>
             {children}
@@ -63,7 +73,7 @@ function App() {
         );
       }
     }
-  ), [useRastermap, mainAreaWidth]);
+  ), [useRastermap, mainAreaWidth, showUnitsTables]);
   const onSpecialLinkClick = useMemo(
     () => (link: string) => {
       const r = parseSpecialLink(link);
@@ -110,18 +120,21 @@ type SessionViewProps = {
   };
   width: number;
   useRastermap: boolean;
+  showUnitsTables: boolean;
 };
 
 const SessionView: FunctionComponent<SessionViewProps> = ({
   session,
   width,
-  useRastermap
+  useRastermap,
+  showUnitsTables
 }) => {
   const W = width - 50;
   const H_spike_density = 400;
   const H_face_motion = 150;
   const H_blink = 150;
   const H_eye_area = 150;
+  const H_units_table = 300;
 
   const hasBehavior = session.session_path.includes("behavior");
 
@@ -212,6 +225,16 @@ const SessionView: FunctionComponent<SessionViewProps> = ({
               </div>
             </IfHasBeenVisible>
           </>
+        )}
+        {showUnitsTables && (
+          <IfHasBeenVisible width={W} height={H_units_table}>
+            <DynamicTableView
+              width={W}
+              height={H_units_table}
+              path="/units"
+              referenceColumnName="id"
+            />
+          </IfHasBeenVisible>
         )}
       </ProvideNwbFile>
     </SetupTimeseriesSelection>
@@ -316,14 +339,35 @@ const UseRastermapSelector: FunctionComponent<UseRastermapSelectorProps> = ({
   setUseRastermap
 }) => {
   return (
-    <div>
+    <span>
       <input
         type="checkbox"
         checked={useRastermap}
         onChange={(e) => setUseRastermap(e.target.checked)}
       />&nbsp;
       Use rastermap
-    </div>
+    </span>
+  );
+};
+
+type ShowUnitsTablesSelectorProps = {
+  showUnitsTables: boolean;
+  setShowUnitsTables: (val: boolean) => void;
+};
+
+const ShowUnitsTablesSelector: FunctionComponent<ShowUnitsTablesSelectorProps> = ({
+  showUnitsTables,
+  setShowUnitsTables
+}) => {
+  return (
+    <span>
+      <input
+        type="checkbox"
+        checked={showUnitsTables}
+        onChange={(e) => setShowUnitsTables(e.target.checked)}
+      />&nbsp;
+      Show units tables
+    </span>
   );
 };
 
