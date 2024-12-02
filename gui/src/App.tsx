@@ -35,6 +35,7 @@ function App() {
   const offsetLeft = (width - mainAreaWidth) / 2;
   const [useRastermap, setUseRastermap] = useState(true);
   const [showUnitsTables, setShowUnitsTables] = useState(true);
+  const [okayToViewSmallScreen, setOkayToViewSmallScreen] = useState(false);
   const divHandler = useMemo(() => (
     (a: { className: string | undefined; props: any; children: any }) => {
       const { className, props, children } = a;
@@ -81,6 +82,21 @@ function App() {
     },
     []
   );
+  if (width < 800 && !okayToViewSmallScreen) {
+    return (
+      <div style={{padding: 20}}>
+        <p>
+          This page is not optimized for small screens or mobile devices. Please use a larger
+          screen or expand your browser window width.
+        </p>
+        <p>
+          <button onClick={() => setOkayToViewSmallScreen(true)}>
+            I understand, continue anyway
+          </button>
+        </p>
+      </div>
+    );
+  }
   return (
     <div
       style={{
