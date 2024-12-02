@@ -1,0 +1,34 @@
+// system load_dandi_tool/load_dandi_tool.md
+// system submit_jobs_tool/submit_jobs_tool.md
+
+=======================
+For each asset (aka session) in Dandiset 000473
+
+Print the asset path (also known as the session path)
+
+Submit a multiscale_spike_density job. Use /units as the units path.
+
+Print the job id and status
+
+If the status of the job is "completed" then print the url of the output named "output".
+
+Print an empty line.
+=======================
+
+Assemble a JSON object with the following structure
+
+[
+    {
+        "session_path": "[session path]",
+        "nwb_url": "[nwb url]",
+        "multiscale_spike_density": {
+            "job_id": "[job id]",
+            "status": "[status]",
+            "output_url": "[output url]"  # empty string if status is not "completed"
+        }
+    }
+]
+
+Write the json object to a file called "sessions.json"
+
+Then copy this file to ../../gui/src/sessions.json
