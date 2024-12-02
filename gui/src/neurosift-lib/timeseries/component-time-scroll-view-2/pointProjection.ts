@@ -226,7 +226,7 @@ const computeScales = (
         Instead, let's rewrite [1] as:
             [1']  y --> ((y * userScaleFactor) / (y_max - y_min) - (y_min / (y_max - y_min)) * panelHeight
         That will be less hairy if we let yScale = (panelHeight) / (y_max - y_min), then:
-
+        
             [1f] y --> ( y * yScale * userScaleFactor) - (y_min * yScale)
         which gives us an input, a scale, and an offset.
 
@@ -237,10 +237,10 @@ const computeScales = (
         Again, use yScale = (panelHeight) / y_range:
             [2"'] y --> (yScale * y_range) - (yScale  * y * userScaleFactor) + (yScale * y_min)
         and as a scale and offset version:
-
+        
             [2f]  y --> (-yScale * y * userScaleFactor) + (yScale * (y_range + y_min))
         (and observe that since y_range = y_max - y_min, then y_range + y_min = y_max.)
-
+        
         If either data dimension has width 0, we will map it to the midpoint of the corresponding pixel dimension.
     */
 

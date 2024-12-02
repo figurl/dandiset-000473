@@ -151,7 +151,7 @@ const getTimeseriesAlignmentViewData = async (
   return { items };
 };
 
-export const tryGetLindiUrl = async (url: string, dandisetId: string) => {
+const tryGetLindiUrl = async (url: string, dandisetId: string) => {
   if (url.endsWith(".lindi.json") || url.endsWith(".lindi.tar")) {
     return url;
   }
